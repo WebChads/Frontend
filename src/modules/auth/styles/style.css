@@ -1,0 +1,156 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    font-family: 'Manrope', sans-serif;
+}
+
+.main-header{
+    background-color: #595959;
+    height: 100px;
+    margin-bottom: 100px;  
+}
+
+.auth-header{
+    font-size: 32px;
+    font-weight: bolder;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.tel-number{
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.input-field {
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+    background-color: #E8E8E8;
+    margin-bottom: 20px;
+
+  }
+
+.input-field::placeholder{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.confirm-btn{
+    border-radius: 50px;
+    background-color: #0070EF;
+    color: white;
+    padding: 15px 32px;
+    border: none;
+    font-size: 20px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+.sms-message{
+    text-align: center;
+    margin-bottom: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.back-btn {
+    position: fixed;
+    bottom: 96px;
+    cursor: pointer;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0070EF;
+  }
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрует всё внутри формы */
+    width: 100%;
+  }
+
+.role-selector{
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.toggle-selector {
+    display: flex;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    overflow: hidden;
+    width: fit-content;
+    margin: 0 auto 20px;
+    margin-bottom: 48px;
+  }
+  
+  .toggle-option {
+    padding: 10px 30px;
+    cursor: pointer;
+    background-color: white;
+    color: #333;
+    font-weight:500;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .toggle-option.active {
+    background-color: #8000ff; /* фиолетовый */
+    color: white;
+  }
+
+  .toggle-option:first-child {
+    border-radius: 0 50px 50px 0; /* скруглён ПРАВЫЙ угол у "Тренера" */
+  }
+  
+  .toggle-option:last-child {
+    border-radius: 50px 0 0 50px; /* скруглён ЛЕВЫЙ угол у "Игрока" */
+  }
+
+/* personalDataScreen */
+.personalData-header{
+    background-color: #595959;
+    height: 100px;
+    margin-bottom: 48px; 
+}
+
+.skip-btn {
+    margin-top: 16px;
+    cursor: pointer;
+    text-align: center;
+    color: #0070EF;
+  }
+
+  .personal-data{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+  }
+
+.input-field::placeholder{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
