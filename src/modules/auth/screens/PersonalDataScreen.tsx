@@ -12,11 +12,19 @@ export const PersonalDataScreen = () => {
   const [gender, setGender] = useState<'male' | 'female'>('male');
   const navigate = useNavigate();
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Здесь можно добавить сохранение данных в состояние или в API
+
+    navigate('/profile');
+  };
+
   return (
     <>
     <header className='personalData-header'>
     </header>
-    <form className="register-form">
+    <form className="register-form" onSubmit={handleSubmit}>
       <h1 className="auth-header">Заполните личные данные</h1>
 
       <label className="personal-data">Имя</label>

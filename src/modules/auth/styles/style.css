@@ -1,156 +1,152 @@
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body{
-    font-family: 'Manrope', sans-serif;
+html, body {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
 }
 
-.main-header{
-    background-color: #595959;
-    height: 100px;
-    margin-bottom: 100px;  
+.main-header,
+.personalData-header {
+  background-color: #595959;
+  height: 100px;
+  margin-bottom: 3rem;
 }
 
-.auth-header{
-    font-size: 32px;
-    font-weight: bolder;
-    margin-bottom: 48px;
-    text-align: center;
+.auth-header {
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
-.auth-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  
+.auth-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-.tel-number{
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    text-align: center;
+.tel-number,
+.role-selector {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .input-field {
-    padding: 0.75rem 1.25rem;
-    border-radius: 50px;
-    border: 1px solid #ccc;
-    width: 100%;
-    max-width: 300px;
-    background-color: #E8E8E8;
-    margin-bottom: 20px;
-
-  }
-
-.input-field::placeholder{
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  width: 90%;
+  max-width: 300px;
+  background-color: #E8E8E8;
+  margin-bottom: 1.5rem;
 }
 
-.confirm-btn{
-    border-radius: 50px;
-    background-color: #0070EF;
-    color: white;
-    padding: 15px 32px;
-    border: none;
-    font-size: 20px;
-    font-family: 'Manrope', sans-serif;
-    font-weight: bolder;
-    cursor: pointer;
-    margin-top: 24px;
+.input-field::placeholder {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
 }
 
-.sms-message{
-    text-align: center;
-    margin-bottom: 8px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+.confirm-btn {
+  border-radius: 50px;
+  background-color: #0070EF;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  font-size: 1.25rem;
+  font-family: 'Manrope', sans-serif;
+  font-weight: bolder;
+  cursor: pointer;
+  margin-top: 1.5rem;
 }
 
-.back-btn {
-    position: fixed;
-    bottom: 96px;
-    cursor: pointer;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #0070EF;
-  }
-
-.register-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Центрует всё внутри формы */
-    width: 100%;
-  }
-
-.role-selector{
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.toggle-selector {
-    display: flex;
-    border: 2px solid #ccc;
-    border-radius: 50px;
-    overflow: hidden;
-    width: fit-content;
-    margin: 0 auto 20px;
-    margin-bottom: 48px;
-  }
-  
-  .toggle-option {
-    padding: 10px 30px;
-    cursor: pointer;
-    background-color: white;
-    color: #333;
-    font-weight:500;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-    border: none;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .toggle-option.active {
-    background-color: #8000ff; /* фиолетовый */
-    color: white;
-  }
-
-  .toggle-option:first-child {
-    border-radius: 0 50px 50px 0; /* скруглён ПРАВЫЙ угол у "Тренера" */
-  }
-  
-  .toggle-option:last-child {
-    border-radius: 50px 0 0 50px; /* скруглён ЛЕВЫЙ угол у "Игрока" */
-  }
-
-/* personalDataScreen */
-.personalData-header{
-    background-color: #595959;
-    height: 100px;
-    margin-bottom: 48px; 
+.sms-message {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.875rem;
 }
 
 .skip-btn {
-    margin-top: 16px;
-    cursor: pointer;
-    text-align: center;
-    color: #0070EF;
+  margin-top: 1rem;
+  cursor: pointer;
+  text-align: center;
+  color: #0070EF;
+}
+
+.back-btn {
+  position: fixed;
+  bottom: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #0070EF;
+  cursor: pointer;
+}
+
+/* Toggle switch */
+.toggle-selector {
+  display: flex;
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  overflow: hidden;
+  width: fit-content;
+  margin: 0 auto 3rem;
+}
+
+.toggle-option {
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  background-color: white;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.25rem;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-option.active {
+  background-color: #8000ff;
+  color: white;
+}
+
+.toggle-option:first-child {
+  border-radius: 0 50px 50px 0;
+}
+
+.toggle-option:last-child {
+  border-radius: 50px 0 0 50px;
+}
+
+/* 📱 Адаптация для маленьких экранов */
+@media (max-width: 375px) {
+  .input-field,
+  .confirm-btn {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
   }
 
-  .personal-data{
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+  .auth-header,
+  .tel-number,
+  .role-selector {
+    font-size: 1.25rem;
   }
 
-.input-field::placeholder{
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+  .toggle-option {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .back-btn {
+    bottom: 72px;
+  }
 }
