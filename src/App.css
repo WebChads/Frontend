@@ -32,4 +32,16 @@
 
 .footer-label {
   margin-top: 4px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer-link.active .footer-icon-wrapper {
+  background-color: white;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+/* Фиолетовая иконка через фильтр (примерно) */
+.footer-link.active .footer-icon {
+  filter: brightness(0) saturate(100%) invert(29%) sepia(98%) saturate(6782%) hue-rotate(203deg) brightness(96%) contrast(101%);
 }
