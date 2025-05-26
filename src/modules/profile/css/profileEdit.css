@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, input, button, h2 {
+  font-family: 'Manrope', sans-serif;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.profile-data{
+  font-size: 24px;
+  margin-bottom: 48px;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+
+input {
+  display: block;
+  width: 90%;
+  max-width: 360px;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 32px;
+  background-color: #E8E8E8;
+  transition: border 0.3s ease;
+  text-align: center;
+}
+
+input:focus {
+  border-color: #0070EF;
+  outline: none;
+}
+
+.save-btn{  
+  display: block;
+  width: 90%;
+  max-width: 360px;
+  margin: 10px auto;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 32px;
+  background-color: #0070EF;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.cancel-button, .load-button {
+  background: none;
+  color: #0070EF;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+
+
+.avatar-wrapper {
+  width: 96px;
+  height: 96px;
+  border-radius: 100%;
+  border: 2px solid #ddd;
+  background-color: #E8E8E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatar {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.form-group{
+    margin-bottom: 24px;
+}
+
+.form-group:last-of-type{
+    margin-bottom: 36px;
+}
+
+
+

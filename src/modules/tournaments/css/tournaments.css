@@ -1,0 +1,172 @@
+.tournaments-container {
+  padding: 16px;
+}
+
+
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 12px;
+  background-color: #eee;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tabs .active {
+  background-color: #1E90FF;
+  color: white;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px 36px 8px 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.search-bar svg,
+.search-bar img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+.search-bar img:nth-of-type(1) {
+  right: 36px;
+}
+
+.search-bar img:nth-of-type(2) {
+  right: 8px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.tournament-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tournament-card {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-radius: 32px;
+  padding: 12px;
+  position: relative;
+}
+
+
+.tournament-info {
+  flex: 1;
+}
+
+.tournament-date {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.tournament-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.tournament-judge {
+  font-size: 12px;
+  color: #666;
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+}
+
+.status-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-circle.future {
+  background-color: #1E90FF; /* Синий */
+}
+
+.status-circle.past {
+  background-color: #ccc; /* Серый */
+}
+
+.status-circle.upcoming {
+  background-color: #FFD700; /* Жёлтый */
+}
+
+/* Ближайший турнир */
+.upcoming-banner {
+  background-color: #0070EF;
+  color: #fff; 
+  border-radius: 32px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 100px;
+  width: 90%;
+}
+
+.upcoming-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.tournament-label {
+  font-size: 12px;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.tournament-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.upcoming-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.upcoming-date{
+    font-weight: 500;
+}
+
+
