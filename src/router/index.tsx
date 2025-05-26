@@ -6,6 +6,7 @@ import { RegisterPage } from "../pages/auth/RegisterPage";
 import { ProfilePage } from "../pages/profile/ProfilePage";
 import { ProfileEditPage } from "../pages/profile/ProfileEditPage";
 import { DocumentPage } from "../pages/DocumentPage";
+import { TournamentsPage } from "../pages/TournamentsPage";
 
 
 export const AppRoutes = () => {
@@ -18,6 +19,7 @@ export const AppRoutes = () => {
             <Route path="/profile" element = {<ProfilePage/>}/>
             <Route path="/profile/edit" element = {<ProfileEditPage/>}/>
             <Route path="/documents" element = {<DocumentPage/>}/>
+            <Route path="/tournaments" element = {<TournamentsPage/>}/>
         </Routes>
     )
 }
