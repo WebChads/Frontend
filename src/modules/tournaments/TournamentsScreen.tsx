@@ -75,7 +75,7 @@ export const TournamentsScreen = () => {
                                     <div className="tournament-line">
                                         <div className={`status-circle ${dateClass}`}></div>
                                         {dateClass === 'upcoming' && (
-                                            <span className="tournament-label">Ближайший турнир</span>
+                                            <span className="tournament-label"></span>
                                         )}
                                         <span className="tournament-date">{formatDate(tournament.date)}</span>
                                     </div>
