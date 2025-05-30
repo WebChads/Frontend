@@ -49,6 +49,12 @@ function formatDate(dateString: string) {
 export const TournamentsScreen = () => {
     const [selectedTab, setSelectedTab] = useState<'search' | 'requests' | 'past'>('search');
 
+    // 🔍 Вычисление ближайшего турнира
+    const now = new Date();
+    const upcomingTournament = mockTournaments
+        .filter(t => new Date(t.date) >= now)
+        .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())[0];
+
     return (
         <>
             <div className="tournaments-container">
@@ -88,17 +94,30 @@ export const TournamentsScreen = () => {
                     })}
                 </div>
 
-                <div className="upcoming-banner">
-                    <div className="upcoming-left">
-                        <div className="upcoming-header">
-                            <div className="status-circle upcoming"></div>
-                            <div className="tournament-label">Ближайший турнир</div>
+                {/* Ближайший турнир, если есть */}
+                {upcomingTournament ? (
+                    <div className="upcoming-banner">
+                        <div className="upcoming-left">
+                            <div className="upcoming-header">
+                                <div className="status-circle upcoming"></div>
+                                <div className="tournament-label">Ближайший турнир</div>
+                            </div>
+                            <div className="upcoming-title">{upcomingTournament.title}</div>
+                            <div className="upcoming-date">{formatDate(upcomingTournament.date)}</div>
                         </div>
-                        <div className="upcoming-title">Кубок сигмабоев</div>
-                        <div className="upcoming-date">29.05.2025</div>
+                        <img src={arrowIcon} className="arrow-icon" />
                     </div>
-                    <img src={arrowIcon} className="arrow-icon" />
-                </div>
+                ) : (
+                    <div className="upcoming-banner empty">
+                        <div className="upcoming-left">
+                            <div className="upcoming-header">
+                                <div className="status-circle"></div>
+                                <div className="tournament-label">Ближайший турнир</div>
+                            </div>
+                            <div className="upcoming-title">Нет ближайших турниров</div>
+                        </div>
+                    </div>
+                )}
             </div>
 
             <Footer />
