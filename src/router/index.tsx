@@ -7,6 +7,7 @@ import { ProfilePage } from "../pages/profile/ProfilePage";
 import { ProfileEditPage } from "../pages/profile/ProfileEditPage";
 import { DocumentPage } from "../pages/DocumentPage";
 import { TournamentsPage } from "../pages/TournamentsPage";
+import { TournamentDetailsPage } from "../pages/TournamentDetailsPage";
 
 
 export const AppRoutes = () => {
@@ -20,6 +21,7 @@ export const AppRoutes = () => {
             <Route path="/profile/edit" element = {<ProfileEditPage/>}/>
             <Route path="/documents" element = {<DocumentPage/>}/>
             <Route path="/tournaments" element = {<TournamentsPage/>}/>
+            <Route path="/tournaments/:id" element={<TournamentDetailsPage />} />
         </Routes>
     )
 }
