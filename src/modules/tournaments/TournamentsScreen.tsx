@@ -6,20 +6,9 @@ import filterIcon from '../../images/filter.png';
 import searchIcon from '../../images/Search.png';
 import arrowIcon from '../../images/arrow.png';
 import { useNavigate } from 'react-router-dom';
+import { useRequests } from './requestContext';
 
 
-const mockRequests = [
-    {
-        id: 1,
-        tournamentId: 1,
-        status: 'APPROVAL',
-    },
-    {
-        id: 2,
-        tournamentId: 2,
-        status: 'ACCEPTED',
-    },
-];
 
 const mockTournaments = [
     {
@@ -79,11 +68,8 @@ function formatDate(dateString: string) {
 export const TournamentsScreen = () => {
     const [selectedTab, setSelectedTab] = useState<'search' | 'requests' | 'past'>('search');
     const [searchTerm, setSearchTerm] = useState('');
-    const [requests, setRequests] = useState(mockRequests);
+    const { requests, cancelRequest } = useRequests();
 
-    const handleCancel = (id: number) => {
-        setRequests(prev => prev.filter(req => req.id !== id));
-    };
 
     const navigate = useNavigate();
     const getTournamentById = (id: number) => mockTournaments.find(t => t.id === id);
@@ -204,7 +190,7 @@ export const TournamentsScreen = () => {
                                             </button>
                                             <button
                                                 className="cancel-button"
-                                                onClick={() => handleCancel(request.id)}
+                                                onClick={() => cancelRequest(request.id)}
                                             >
                                                 Отменить заявку
                                             </button>
