@@ -3,22 +3,22 @@
 }
 
 
-
 .tabs {
   display: flex;
   gap: 8px;
   margin-bottom: 16px;
 }
 
-.tabs button {
+.filter-btn {
   flex: 1;
   padding: 8px;
   border: none;
-  border-radius: 12px;
+  border-radius: 32px;
   background-color: #eee;
   font-weight: bold;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
+  font-size: 14px;
 }
 
 .tabs .active {
@@ -124,16 +124,16 @@
   flex-shrink: 0;
 }
 
-.status-circle.future {
-  background-color: #1E90FF; /* Синий */
-}
-
 .status-circle.past {
   background-color: #ccc; /* Серый */
 }
 
 .status-circle.upcoming {
-  background-color: #FFD700; /* Жёлтый */
+  background-color: #1E90FF; /* Жёлтый */
+}
+
+.status-circle.closer{
+  background-color: #F9CE23;
 }
 
 /* Ближайший турнир */
@@ -364,4 +364,43 @@
 .cancelled{
   border: 2px solid #FF0000;
   color: black;
+}
+
+.skip-btn {
+  margin-top: 1rem;
+  cursor: pointer;
+  text-align: center;
+  color: #0070EF;
+}
+
+.filter-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+
+.filter-header{
+  text-align: center;
+}
+
+.filter-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 50%;
+}
+
+.filter-items button {
+  font-size: 20px;
+}
+
+.filter-items .active {
+  background-color: #1E90FF;
+  color: white;
+}
+
+.confirm-btn2{
+  margin-top:40%;
 }

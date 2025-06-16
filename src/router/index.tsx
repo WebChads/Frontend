@@ -8,6 +8,7 @@ import { ProfileEditPage } from "../pages/profile/ProfileEditPage";
 import { DocumentPage } from "../pages/DocumentPage";
 import { TournamentsPage } from "../pages/TournamentsPage";
 import { TournamentDetailsPage } from "../pages/TournamentDetailsPage";
+import { TournamentFilterPage } from "../pages/TournamentsFilterPage";
 
 
 export const AppRoutes = () => {
@@ -22,6 +23,7 @@ export const AppRoutes = () => {
             <Route path="/documents" element = {<DocumentPage/>}/>
             <Route path="/tournaments" element = {<TournamentsPage/>}/>
             <Route path="/tournaments/:id" element={<TournamentDetailsPage />} />
+            <Route path="/tournament/filter" element={<TournamentFilterPage/>}/>
         </Routes>
     )
 }
