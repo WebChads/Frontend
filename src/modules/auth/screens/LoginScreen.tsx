@@ -4,13 +4,15 @@ import Input from '../../../ui/Input';
 import Button from '../../../ui/Button';
 import '../styles/style.css';
 
+
 export const LoginScreen = () => {
   const [phone, setPhone] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    navigate('/verify');
+    localStorage.setItem('userPhone', phone);
+    navigate('/register'); 
   };
 
   return (
