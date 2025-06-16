@@ -5,11 +5,9 @@ import { authStore } from './store/AuthStore.tsx'
 import { AuthContext } from './contexts/AuthContext';
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
     <AuthContext.Provider value={authStore}>\
       <App />
     </AuthContext.Provider>
-  </StrictMode>,
 )
 
 

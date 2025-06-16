@@ -13,6 +13,9 @@ export class MockAuthService implements IAuthService {
     constructor(userRole: UserRole) {
         this.currentToken = tokens.get(userRole) || this.defaultToken;
     }
+    register(credentials: any): Promise<void> {
+        throw new Error("Method not implemented.");
+    }
 
     async login(credentials: any): Promise<{ token: string; }> {
         return {

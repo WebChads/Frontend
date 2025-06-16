@@ -3,29 +3,42 @@ import { useNavigate } from 'react-router-dom';
 import Input from '../../../ui/Input';
 import Button from '../../../ui/Button';
 import '../styles/style.css';
+import { api } from '../../../api/ApiInstance';
+import { useForm } from 'react-hook-form';
+import { ISendSMSCodeCredentials } from '../../../api/services/authService/credentials/ISendSMSCodeCredentials';
 
 export const LoginScreen = () => {
-  const [phone, setPhone] = useState('');
+   const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<ISendSMSCodeCredentials>();
+
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    navigate('/verify');
-  };
+  const onSubmit = async (credentials: ISendSMSCodeCredentials) => {
+    await api.auth.sendSMSCode(credentials);
+    navigate('/verify', { state: { phone: credentials.phone_number } });
+  }
 
   return (
     <>
     <header className='main-header'>
     </header>
-    <form onSubmit={handleSubmit} className='auth-form'>
+    <form onSubmit={handleSubmit(onSubmit)} className='auth-form'>
         <h1 className='auth-header'>Авторизация</h1>
         <p className='tel-number'>Введите номер телефона</p>
       <Input
+        {...register('phone_number', {
+          required: 'Телефон обязателен',
+          pattern: {
+            value: /^\+7\d{10}$/,
+            message: 'Формат: +79991234567'
+          }
+        })}
         type="tel"
-        placeholder="телефон"
-        value={phone}
+        placeholder="+79991234567"
         className="input-field"
-        onChange={(e) => setPhone(e.target.value)}
       />
       <Button type="submit" className='confirm-btn'>Подтвердить</Button>
     </form>

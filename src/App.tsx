@@ -5,14 +5,15 @@ import { RequestsProvider } from './modules/tournaments/requestContext';
 import { useContext } from 'react';
 import { AuthContext } from './contexts/AuthContext';
 import { useAuth } from './hooks/useAuth';
+import { api } from './api/ApiInstance';
+import { UserRole } from './store/UserRole';
 
 
 
 function App() {
   const authStore = useContext(AuthContext)
-  authStore.login("f");
   const auth = useAuth();
-  console.log(auth.user?.role)
+  
   return (
     <RequestsProvider>
     <Router>

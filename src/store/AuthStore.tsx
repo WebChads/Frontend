@@ -2,6 +2,7 @@ import { makeAutoObservable } from 'mobx';
 import { jwtDecode } from "jwt-decode";
 import { api } from '../api/ApiInstance';
 import { UserRole } from './UserRole';
+import { IVerifySMSCodeCredentials } from '../api/services/authService/credentials/IVerifySMSCodeCredentials';
 
 export interface IUser {
     id: string,
@@ -41,10 +42,10 @@ export class AuthStore {
         return user;
     } 
 
-    async login(credentials: any) {
+    async login(credentials: IVerifySMSCodeCredentials) {
         this.isLoading = true;
         try {
-            const { token } = await api.auth.login(credentials);
+            const { token } = await api.auth.verifySMSCode(credentials);
             localStorage.setItem('token', token);
             this.user = this.parseJWT(token);
         } finally {
