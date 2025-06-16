@@ -17,7 +17,6 @@ export class AuthService implements IAuthService {
 
     async verifySMSCode(credentials: IVerifySMSCodeCredentials): Promise<IResponseVerifySMSCode> {
         const response = await this.axiosInstance.post<IResponseVerifySMSCode>('verify-sms-code', credentials);
-        console.log(response.status)
         return response.data;
     }
 

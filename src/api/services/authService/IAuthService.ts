@@ -5,7 +5,6 @@ import { IVerifySMSCodeCredentials } from "./credentials/IVerifySMSCodeCredentia
 
 export interface IAuthService {
     register(credentials: IRegisterCredentials): Promise<void>
-    login(credentials: any): Promise<{token: string}>
     sendSMSCode(credentials: ISendSMSCodeCredentials): Promise<void>
     verifySMSCode(credentials: IVerifySMSCodeCredentials): Promise<IResponseVerifySMSCode>
 }

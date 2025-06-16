@@ -23,10 +23,10 @@ export class AuthStore {
         const token = localStorage.getItem('token');
         if (token) {
             try {
-                this.user = this.parseJWT(token);
-            } catch (e){
+                this.user = parseJWT(token);
+            } catch (e) {
                 localStorage.removeItem('token')
-            }    
+            }
         }
         this.isLoading = false;
     }
@@ -35,19 +35,12 @@ export class AuthStore {
         return this.user !== null && allowedRoles.includes(this.user.role);
     }
 
-    private parseJWT(token: string): IUser | null {
-        const decode = jwtDecode<any>(token);
-        const user = jwtToUser(decode);
-
-        return user;
-    } 
-
     async login(credentials: IVerifySMSCodeCredentials) {
         this.isLoading = true;
         try {
             const { token } = await api.auth.verifySMSCode(credentials);
             localStorage.setItem('token', token);
-            this.user = this.parseJWT(token);
+            this.user = await parseJWT(token);
         } finally {
             this.isLoading = false;
         }
@@ -59,27 +52,34 @@ export class AuthStore {
     }
 }
 
-function jwtToUser(jwtPayload: any): IUser {
-  let role: UserRole;
-  
-  switch(jwtPayload.user_role) {
-    case "Administrator":
-      role = UserRole.Admin;
-      break;
-    case "Player":
-      role = UserRole.Player;
-      break;
-    case "Trainer":
-      role = UserRole.Trainer;
-      break;
-    default:
-      role = UserRole.Player; 
-  }
+function parseJWT(token: string) {
+    const decode = jwtDecode(token);
+    const user = jwtToUser(decode);
 
-  return {
-    id: jwtPayload.user_id,
-    role: role
-  };
+    return user;
+}
+
+function jwtToUser(jwtPayload: any): IUser {
+    let role: UserRole;
+
+    switch (jwtPayload.user_role) {
+        case "Administrator":
+            role = UserRole.Admin;
+            break;
+        case "Player":
+            role = UserRole.Player;
+            break;
+        case "Trainer":
+            role = UserRole.Trainer;
+            break;
+        default:
+            role = UserRole.Player;
+    }
+
+    return {
+        id: jwtPayload.user_id,
+        role: role
+    };
 }
 
 export const authStore = new AuthStore();
